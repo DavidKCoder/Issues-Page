@@ -1,0 +1,27 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .commentBody {
+    border: 1px solid rgb(175, 175, 175);
+    padding: 20px 15px;
+    margin: 10px 0;
+    background-color: rgb(175, 175, 175);
+  }
+
+  .user {
+    text-transform: capitalize;
+  }
+}
+
+@media (max-width: 767px) {
+    .comments {
+        width: 100%;
+    }
+}
