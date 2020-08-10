@@ -4,7 +4,7 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { getIssues } from '../api/api'
 // import Issue from './Issues/Issue'
-import Issues from './Issues/Issues'
+import Issues from '../Issues/issues'
 import Spiner from './Spiner/Spiner'
 import Pagination from './Pagination/Pagination'
 
