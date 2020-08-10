@@ -1,41 +1,49 @@
 .issues {
+  height: 100%;
   border: 1px solid #ccc;
   border-radius: 10px;
   .issue {
-    padding: 10px 10px 5px 10px;
+    background: #f6f6f6;
+    padding: 10px 15px;
     border-bottom: 0.1px solid #ccc;
     border-radius: 6px;
-    &:hover {
-      cursor: pointer;
-      background-color: rgba(238, 238, 238, 0.555);
-    }
+
     .header {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      .title {
+      margin-bottom: 10px;
+      .status {
+        .fa-exclamation-circle {
+          color: #eb4034;
+        }
+      }
+      h5 {
         font-size: 18px;
-        margin: 0;
-        line-height: 1.2;
-      }
-      .isOpen {
-        line-height: 1.3;
-        margin-right: 5px;
-        .open {
-          fill: rgb(8, 175, 8) !important;
-        }
-        .fa-times-circle {
-          color: red;
-        }
+        margin: 0 5px 0 5px;
       }
     }
-    .badges {
-      .badge {
-        margin: 0 4px;
-        border-radius: 15px;
-        padding: 3px 8px;
-        color: #fff;
+    .labels {
+      .label {
+        margin: 0 5px;
+        padding: 3px;
       }
     }
+    .infoTicket {
+      color: #586069;
+    }
+  }
+}
+
+.issueMD {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: left;
+  background: #fbfbfb;
+  padding: 15px;
+}
+
+@media (min-width: 767) {
+  .issueMD {
+    width: 100%;
+    padding: 0;
   }
 }

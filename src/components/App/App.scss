@@ -3,12 +3,23 @@ body {
   height: 100vh;
 }
 
+.d-inline {
+  display: inline-block;
+}
+
 .App {
   display: flex;
   justify-content: center;
   height: 100vh;
   align-items: center;
 }
-li {
-  list-style-type: none;
+a {
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+img {
+  width: 100%;
 }
