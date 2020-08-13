@@ -1,23 +1,58 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+.top {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #cececebd;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
 .issues {
-  height: 100%;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 5px;
   .issue {
     background: #f6f6f6;
     padding: 10px 15px;
     border-bottom: 0.1px solid #ccc;
     border-radius: 6px;
 
+    &:hover {
+      background: #cacaca62;
+    }
     .header {
-      margin-bottom: 10px;
-      .status {
-        .fa-exclamation-circle {
-          color: #eb4034;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+
+      .title {
+        font-size: 17px;
+        margin: 0;
+        line-height: 1.1;
+        color: rgb(71, 71, 71);
+      }
+      .badges {
+        margin-left: 8px;
+
+        .badge {
+          padding: 3px 8px;
+          margin-left: 5px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 600;
         }
       }
-      h5 {
-        font-size: 18px;
-        margin: 0 5px 0 5px;
+
+      .isOpen {
+        margin-right: 5px;
+
+        .bi-exclamation-circle {
+          color: rgb(5, 165, 5);
+        }
+
+        .fa-times-circle {
+          color: red;
+        }
       }
     }
     .labels {
@@ -29,21 +64,43 @@
     .infoTicket {
       color: #586069;
     }
+
+    .number {
+      font-size: 12px;
+      margin-left: 20px;
+      color: #586069;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
   }
 }
 
-.issueMD {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  text-align: left;
-  background: #fbfbfb;
-  padding: 15px;
+// Form section
+.issue-btn,
+.issue-input {
+  border: 1px solid rgba(201, 199, 199, 0.822);
+  padding: 8px 10px;
+  border-radius: 5px;
+  background: #27ae60;
+  outline: none;
+  color: #fff;
+  transition: 0.3s;
+
+  &:hover {
+    background: #19914b;
+  }
 }
 
-@media (min-width: 767) {
-  .issueMD {
-    width: 100%;
-    padding: 0;
+.issue-input {
+  margin-right: 10px;
+  background: #fff;
+  color: #000;
+
+  &:hover {
+    background: #fff;
+  }
+  &:focus {
+    border: 1px solid #27ae60;
+    outline: none;
+    box-shadow: 0 0 5px 1px #27ae60;
   }
 }

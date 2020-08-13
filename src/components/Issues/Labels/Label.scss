@@ -1,0 +1,79 @@
+.drop-down {
+  display: block;
+  justify-content: right;
+  border: 1px solid rgba(201, 199, 199, 0.822);
+  padding: 3px 8px;
+  border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 0 5px rgb(11, 155, 6);
+    .fa-angle-up,
+    .fa-angle-down {
+      color: rgb(11, 155, 6);
+    }
+  }
+}
+
+.fa-tag {
+  margin-right: 5px;
+}
+
+.fa-angle-up,
+.fa-angle-down {
+  margin-left: 5px;
+}
+
+.drop-down-form {
+  input {
+    width: 245px;
+    height: 25px;
+    border: none;
+    border: 1px solid rgba(192, 192, 192, 0.438);
+    outline: none;
+
+    &:focus {
+      border: 1px solid #27ae60;
+      outline: none;
+      box-shadow: 0 0 5px 1px #27ae60;
+    }
+  }
+}
+
+.drop-down-block {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.993);
+  box-shadow: 0 3px 5px rgb(97, 96, 96);
+  margin-top: 10px;
+  z-index: 1;
+  .label {
+    display: flex;
+    align-items: center;
+    border: 0.5px solid rgba(192, 192, 192, 0.438);
+    width: 250px;
+
+    &:hover {
+      background: rgba(187, 185, 185, 0.192);
+    }
+  }
+  i {
+    font-size: 30px;
+    margin-right: 5px;
+    margin-left: 20px;
+  }
+
+  .label-1 i {
+    color: orange;
+  }
+  .label-2 i {
+    color: green;
+  }
+  .label-3 i {
+    color: lightseagreen;
+  }
+  .label-4 i {
+    color: #fed330;
+  }
+  .label-5 i {
+    color: #b71540;
+  }
+}

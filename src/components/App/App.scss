@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100vh;
+  height: 80vh;
 }
 
 .d-inline {
@@ -8,10 +8,11 @@ body {
 }
 
 .App {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  align-items: center;
+  display: block;
+  margin: 0 20%;
+}
+li {
+  list-style-type: none;
 }
 a {
   &:hover {
@@ -22,4 +23,10 @@ a {
 
 img {
   width: 100%;
+}
+
+@media (max-width: 785px) {
+  .App {
+    margin: 0 5px;
+  }
 }

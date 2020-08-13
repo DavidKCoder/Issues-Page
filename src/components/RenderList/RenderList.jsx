@@ -3,7 +3,11 @@ import "./RenderList.scss";
 import Issues from "../Issues/issues";
 
 const RenderList = () => {
-  return <Issues />;
+  return (
+    <React.Fragment>
+      <Issues />
+    </React.Fragment>
+  );
 };
 
 export default RenderList;
