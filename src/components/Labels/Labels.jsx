@@ -48,7 +48,7 @@ const Labels = ({ labels, addLabel }) => {
                   type="text"
                   name="label"
                   value={form.label}
-                  placeholder="Add labels..."
+                  placeholder="Add new label..."
                   onChange={handleChange}
                 />
                 <input

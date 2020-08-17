@@ -5,10 +5,21 @@
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 5px;
-} 
+}
 
-.add-issue-form {
-  display: flex;
+.attach-issues-form {
+  position: absolute;
+  top: 70px;
+  right: 60px;
+}
+
+.attached-labels {
+  width: 150px;
+}
+
+.add-issue-form input,
+.add-issue-btn {
+  margin-top: 5px;
 }
 
 .issues {
@@ -79,7 +90,9 @@
 
 // Form section
 .issue-btn,
-.issue-input {
+.issue-input,
+.attach-label,
+.add-issue-btn {
   border: 1px solid rgba(201, 199, 199, 0.822);
   padding: 8px 10px;
   border-radius: 5px;
@@ -110,4 +123,19 @@
 
 .nav-link {
   text-decoration: none;
+  color: #000;
+}
+
+//! Issue Page
+
+.issue-page {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+
+  .description {
+    margin: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+  }
 }

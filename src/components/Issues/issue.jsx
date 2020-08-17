@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import LabelsType from "../LabelsType/LabelsType";
 
 const Issue = ({ issue }) => {
-  debugger;
   return (
     <NavLink to={"issue/" + issue.id} className="nav-link">
       <div className="issue">

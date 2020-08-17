@@ -7,18 +7,35 @@ import LabelsType from "../LabelsType/LabelsType";
 
 const Issue = ({ issue, getIssue, labels, addLabel }) => {
   const [open, setOpen] = useState(false);
-
   const params = useParams();
-  useEffect(() => {
+
+  const refreshPage = () => {
     const id = params.id;
     getIssue(id);
-  }, [issue]);
+  };
+
+  useEffect(() => {
+    refreshPage();
+  }, [refreshPage]);
+
+  const addNewLabel = (label) => {
+    addLabel(label, issue.id);
+    setOpen(false);
+  };
 
   return (
-    <div>
+    <div className="issue-page">
       <h2>{issue.text}</h2>
-      <p>{issue.description}</p>
-      <button onClick={() => setOpen(!open)}>
+      <div className="description">⋯ {issue.description}</div> 
+
+      <div className="issue-page-label">
+        {issue.badges &&
+          issue.badges.map((label) => (
+            <LabelsType key={label.id} label={label} />
+          ))}
+      </div>
+
+      <button onClick={() => setOpen(!open)} className="add-issue-btn">
         Add labels{" "}
         {open ? (
           <i className="fa fa-angle-up"></i>
@@ -34,17 +51,14 @@ const Issue = ({ issue, getIssue, labels, addLabel }) => {
               <div
                 key={label.id}
                 className="label"
-                onClick={() => addLabel(label, issue.id)}
+                onClick={() => addNewLabel(label)}
               >
-                <LabelsType label={label} />
+                <LabelsType  label={label} />
               </div>
             ))}
           </div>
         </div>
       )}
-      {issue &&  issue.badges.map((label) => (
-        <LabelsType key={label.id} label={label} />
-      ))}
     </div>
   );
 };

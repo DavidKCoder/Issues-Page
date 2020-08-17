@@ -5,6 +5,7 @@ const initialState = {
         {
             id: 0,
             text: "How to use eslint-webpack-plugin instead of eslint-loader",
+            description: "In a responsive table, with lots of columns, it's often desirable to make the left-most column sticky, so it doesn't scroll off the page. I think this should be an option within bootstrap, in the same way that we can make the sticky. Sometimes, both the top row and left-col need to be sticky.",
             isOpen: true,
             number: "#1",
             opened: "opened 2 days ago",
@@ -71,8 +72,10 @@ const initialState = {
         {
             id: 4,
             text: "TS Watch mode recompiling stuck",
+            description: "In a responsive table, with lots of columns, it's often desirable to make the left-most column sticky, so it doesn't scroll off the page. I think this should be an option within bootstrap, in the same way that we can make the sticky. Sometimes, both the top row and left-col need to be sticky.",
             isOpen: true,
             number: "#5",
+            opened: "opened 5 days ago",
             badges: [
                 {
                     title: "issue: bug report",
@@ -90,7 +93,6 @@ const initialState = {
             text: "Create react app is now working after done",
             isOpen: false,
             number: "#6",
-            opened: "opened 5 days ago",
             badges: [
                 {
                     title: "needs triage",
@@ -130,7 +132,7 @@ const issuesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 issues: state.issues.map(issue => {
-                    if (issue.id == action.issueId) {
+                    if (issue.id === action.issueId) {
                         return {
                             ...issue,
                             badges: [...issue.badges, action.label]
