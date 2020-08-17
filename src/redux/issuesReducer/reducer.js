@@ -1,4 +1,4 @@
-import { ADD_ISSUE } from './actions'
+import { ADD_ISSUE, ADD_LABEL } from './actions'
 
 const initialState = {
     issues: [
@@ -100,7 +100,7 @@ const initialState = {
             ],
         },
         {
-            id: 5,
+            id: 6,
             text: "Create react app is now working after done",
             isOpen: true,
             number: "#7",
@@ -126,8 +126,23 @@ const issuesReducer = (state = initialState, action) => {
                 ...state,
                 issues: [...state.issues, action.issue]
             }
+        case ADD_LABEL:
+            return {
+                ...state,
+                issues: state.issues.map(issue => {
+                    if (issue.id == action.issueId) {
+                        return {
+                            ...issue,
+                            badges: [...issue.badges, action.label]
+                        }
+                    }
+                    return issue
+                })
+            }
         default: return state
     }
 }
+
+
 
 export default issuesReducer

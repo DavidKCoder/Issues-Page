@@ -8,7 +8,7 @@ const Labels = ({ labels, addLabel }) => {
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({
     label: "",
-    color: "#000",
+    bgColor: "#000",
   });
 
   const handleChange = (e) => {
@@ -17,14 +17,14 @@ const Labels = ({ labels, addLabel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (form.label.trim() && form.color.trim()) {
+    if (form.label.trim() && form.bgColor.trim()) {
       const newLabel = {
         title: form.label,
-        color: form.color,
+        bgColor: form.bgColor,
         id: Date.now(),
       };
       addLabel(newLabel);
-      setForm({ ...form, label: "", color: "" });
+      setForm({ ...form, label: "", bgColor: "" });
     }
   };
 
@@ -53,8 +53,8 @@ const Labels = ({ labels, addLabel }) => {
                 />
                 <input
                   type="color"
-                  name="color"
-                  value={form.color}
+                  name="bgColor"
+                  value={form.bgColor}
                   onChange={handleChange}
                   className="input-color"
                 />
