@@ -1,5 +1,5 @@
-import Issues from '../components/Issues/Issues'
 import Issue from '../components/IssuePage/Issue'
+import Issues from '../components/Issues/Issues'
 
 const issuesPage = {
     component: Issues,
