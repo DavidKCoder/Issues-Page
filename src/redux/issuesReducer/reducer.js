@@ -10,15 +10,7 @@ const initialState = {
             number: "#1",
             opened: "opened 2 days ago",
             badges: [
-                {
-                    id: 0,
-                    title: "issue: bug report",
-                    bgColor: "orange",
-                },
-                {
-                    title: "issue: proposal",
-                    bgColor: "#fed330",
-                },
+                { id: 1, title: 'issue: bug report', bgColor: '#ffa500' },
             ],
         },
         {
@@ -28,11 +20,7 @@ const initialState = {
             isOpen: false,
             number: "#2",
             badges: [
-                {
-                    title: "needs triage",
-                    bgColor: "#b71540",
-                    color: "white",
-                },
+                { id: 2, title: 'tag: new feature', bgColor: '#008000', color: '#fff' },
             ],
         },
         {
@@ -41,15 +29,8 @@ const initialState = {
             isOpen: true,
             number: "#3",
             badges: [
-                {
-                    title: "issue: bug report",
-                    bgColor: "orange",
-                },
-                {
-                    title: "needs triage",
-                    bgColor: "#b71540",
-                    color: "white",
-                },
+                { id: 3, title: 'issue: question', bgColor: '#20b2aa' },
+
             ],
         },
         {
@@ -58,15 +39,8 @@ const initialState = {
             isOpen: true,
             number: "#4",
             badges: [
-                {
-                    title: "issue: proposal",
-                    bgColor: "#fed330",
-                },
-                {
-                    title: "needs triage",
-                    bgColor: "#b71540",
-                    color: "white",
-                },
+                { id: 4, title: 'issue: proposal', bgColor: '#fed330' },
+
             ],
         },
         {
@@ -77,15 +51,8 @@ const initialState = {
             number: "#5",
             opened: "opened 5 days ago",
             badges: [
-                {
-                    title: "issue: bug report",
-                    bgColor: "orange",
-                },
-                {
-                    title: "needs triage",
-                    bgColor: "#b71540",
-                    color: "white",
-                },
+                { id: 5, title: 'needs triage', bgColor: '#b71540', color: '#fff' },
+
             ],
         },
         {
@@ -94,28 +61,8 @@ const initialState = {
             isOpen: false,
             number: "#6",
             badges: [
-                {
-                    title: "needs triage",
-                    bgColor: "#b71540",
-                    color: "white",
-                },
-            ],
-        },
-        {
-            id: 6,
-            text: "Create react app is now working after done",
-            isOpen: true,
-            number: "#7",
-            badges: [
-                {
-                    title: "issue: bug report",
-                    bgColor: "orange",
-                },
-                {
-                    title: "needs triage",
-                    bgColor: "#b71540",
-                    color: "white",
-                },
+                { id: 5, title: 'needs triage', bgColor: '#b71540', color: '#fff' },
+
             ],
         },
     ]

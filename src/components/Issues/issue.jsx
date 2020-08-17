@@ -2,6 +2,7 @@ import React from "react";
 import "./issues.scss";
 import { NavLink } from "react-router-dom";
 import LabelsType from "../LabelsType/LabelsType";
+import PropTypes from "prop-types";
 
 const Issue = ({ issue }) => {
   return (
@@ -31,7 +32,7 @@ const Issue = ({ issue }) => {
           <h4 className="title">{issue.text}</h4>
           <span className="badges">
             {issue.badges.map((badge) => {
-              return <LabelsType label={badge} />;
+              return <LabelsType key={badge.id} label={badge} />;
             })}
           </span>
         </div>
@@ -43,4 +44,7 @@ const Issue = ({ issue }) => {
   );
 };
 
+Issue.propTypes = {
+  issue: PropTypes.array,
+};
 export default Issue;

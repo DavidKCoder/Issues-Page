@@ -4,6 +4,7 @@ import { getIssue } from "../../redux/issueReducer/thunk";
 import { addLabel } from "../../redux/issuesReducer/actions";
 import { connect } from "react-redux";
 import LabelsType from "../LabelsType/LabelsType";
+import PropTypes from "prop-types";
 
 const Issue = ({ issue, getIssue, labels, addLabel }) => {
   const [open, setOpen] = useState(false);
@@ -19,22 +20,32 @@ const Issue = ({ issue, getIssue, labels, addLabel }) => {
   }, [refreshPage]);
 
   const addNewLabel = (label) => {
-    addLabel(label, issue.id);
-    setOpen(false);
+    const filteredItems = issue.badges.filter((item) => {
+      if (item.id === label.id) {
+        return item;
+      }
+    });
+
+    if (!filteredItems.length) {
+      addLabel(label, issue.id);
+      setOpen(false);
+    } else alert("You choosed this label");
   };
 
   return (
     <div className="issue-page">
+      {/*  Issue  block */}
       <h2>{issue.text}</h2>
-      <div className="description">⋯ {issue.description}</div> 
+      <div className="description">⋯ {issue.description}</div>
 
       <div className="issue-page-label">
         {issue.badges &&
-          issue.badges.map((label) => (
-            <LabelsType key={label.id} label={label} />
+          issue.badges.map((label, index) => (
+            <LabelsType key={index} label={label} />
           ))}
       </div>
 
+      {/* Add label for issue */}
       <button onClick={() => setOpen(!open)} className="add-issue-btn">
         Add labels{" "}
         {open ? (
@@ -53,7 +64,7 @@ const Issue = ({ issue, getIssue, labels, addLabel }) => {
                 className="label"
                 onClick={() => addNewLabel(label)}
               >
-                <LabelsType  label={label} />
+                <LabelsType label={label} />
               </div>
             ))}
           </div>
@@ -67,4 +78,11 @@ const mapStateToProps = (state) => ({
   issue: state.issue.issue,
   labels: state.labels.labels,
 });
+
+Issue.propTypes = {
+  issue: PropTypes.array,
+  getIssue: PropTypes.array,
+  labels: PropTypes.array,
+  addLabel: PropTypes.array,
+};
 export default connect(mapStateToProps, { getIssue, addLabel })(Issue);

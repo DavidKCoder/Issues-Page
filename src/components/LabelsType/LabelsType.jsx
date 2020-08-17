@@ -1,5 +1,6 @@
 import React from "react";
 import "./LabelsType.scss";
+import PropTypes from "prop-types";
 
 const LabelsType = ({ label }) => {
   return (
@@ -10,6 +11,10 @@ const LabelsType = ({ label }) => {
       {label.title}
     </div>
   );
+};
+
+LabelsType.propTypes = {
+  label: PropTypes.array,
 };
 
 export default LabelsType;

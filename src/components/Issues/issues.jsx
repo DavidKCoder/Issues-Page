@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { addIssue } from "../../redux/issuesReducer/actions";
 import Labels from "../Labels/Labels";
 import LabelsType from "../LabelsType/LabelsType";
+import PropTypes from "prop-types";
 
 const Issues = ({ issues, addIssue, labels }) => {
   const [form, setForm] = useState({
@@ -39,13 +40,21 @@ const Issues = ({ issues, addIssue, labels }) => {
   };
 
   const attachLable = (label) => {
-    SetAttachLabels([...attachLabels, label]);
-    setOpenLabels(false);
+    const filteredItems = attachLabels.filter((item) => {
+      if (item.id === label.id) {
+        return item;
+      }
+    });
+
+    if (!filteredItems.length) {
+      SetAttachLabels([...attachLabels, label]);
+      setOpenLabels(false);
+    } else alert("You choosed this label");
   };
 
   return (
     <div className="main">
-      {/* Form section */}
+      {/* Header main Page */}
       <div className="top">
         <Labels />
 
@@ -112,8 +121,8 @@ const Issues = ({ issues, addIssue, labels }) => {
             </div>
           )}
           <div className="attached-labels">
-            {attachLabels.map((label) => (
-              <LabelsType key={label.id} label={label} />
+            {attachLabels.map((label, index) => (
+              <LabelsType key={index} label={label} />
             ))}
           </div>
         </div>
@@ -134,5 +143,11 @@ const mapStateToProps = (state) => ({
   issues: state.issues.issues,
   labels: state.labels.labels,
 });
+
+Issues.propTypes = {
+  issues: PropTypes.array,
+  addIssue: PropTypes.array,
+  labels: PropTypes.array,
+};
 
 export default connect(mapStateToProps, { addIssue })(Issues);

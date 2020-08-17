@@ -3,6 +3,7 @@ import "./Label.scss";
 import { connect } from "react-redux";
 import LabelsType from "../LabelsType/LabelsType";
 import { addLabel } from "../../redux/labelsReducer/actions";
+import PropTypes from "prop-types";
 
 const Labels = ({ labels, addLabel }) => {
   const [open, setOpen] = useState(false);
@@ -77,5 +78,10 @@ const Labels = ({ labels, addLabel }) => {
 const mapStateToProps = (state) => ({
   labels: state.labels.labels,
 });
+
+Labels.propTypes = {
+  labels: PropTypes.array,
+  addLabel: PropTypes.array,
+};
 
 export default connect(mapStateToProps, { addLabel })(Labels);
