@@ -81,7 +81,7 @@ const mapStateToProps = (state) => ({
 
 Labels.propTypes = {
   labels: PropTypes.array,
-  addLabel: PropTypes.array,
+  addLabel: PropTypes.func,
 };
 
 export default connect(mapStateToProps, { addLabel })(Labels);

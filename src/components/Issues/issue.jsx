@@ -45,6 +45,6 @@ const Issue = ({ issue }) => {
 };
 
 Issue.propTypes = {
-  issue: PropTypes.array,
+  issue: PropTypes.object,
 };
 export default Issue;

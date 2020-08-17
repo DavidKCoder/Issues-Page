@@ -80,9 +80,9 @@ const mapStateToProps = (state) => ({
 });
 
 Issue.propTypes = {
-  issue: PropTypes.array,
-  getIssue: PropTypes.array,
+  issue: PropTypes.object,
+  getIssue: PropTypes.func,
   labels: PropTypes.array,
-  addLabel: PropTypes.array,
+  addLabel: PropTypes.func,
 };
 export default connect(mapStateToProps, { getIssue, addLabel })(Issue);

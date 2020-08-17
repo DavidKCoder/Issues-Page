@@ -14,7 +14,7 @@ const LabelsType = ({ label }) => {
 };
 
 LabelsType.propTypes = {
-  label: PropTypes.array,
+  label: PropTypes.object,
 };
 
 export default LabelsType;

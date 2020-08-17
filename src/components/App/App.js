@@ -21,7 +21,7 @@ const App = () => {
 }
 
 Provider.propTypes = {
-    store: PropTypes.array
+    store: PropTypes.object
 }
 
 export default App;

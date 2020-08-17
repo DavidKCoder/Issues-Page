@@ -146,7 +146,7 @@ const mapStateToProps = (state) => ({
 
 Issues.propTypes = {
   issues: PropTypes.array,
-  addIssue: PropTypes.array,
+  addIssue: PropTypes.func,
   labels: PropTypes.array,
 };
 
