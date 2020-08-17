@@ -60,20 +60,37 @@
     margin-right: 5px;
     margin-left: 20px;
   }
+  .label-type {
+    width: 150px;
+  }
 
-  .label-1 i {
-    color: orange;
-  }
-  .label-2 i {
-    color: green;
-  }
-  .label-3 i {
-    color: lightseagreen;
-  }
-  .label-4 i {
-    color: #fed330;
-  }
-  .label-5 i {
-    color: #b71540;
+  .filter-form {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 5px;
+    border-bottom: 1px solid #cccbcb;
+    .input-color {
+      margin-left: 5px;
+      width: 25px;
+      border-radius: 50%;
+      outline: none;
+
+      &:hover {
+        box-shadow: 0 0 3px #000;
+      }
+    }
+    .add-label-btn {
+      margin: 0 10px;
+      background: #32b669;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+
+      &:hover {
+        background: #1d914d;
+      }
+    }
   }
 }
