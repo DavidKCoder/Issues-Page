@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.scss'
 import { Provider } from 'react-redux'
-import store from '../../redux/store'
-import { Routing } from '../../Routing/Routing'
+import store from './redux/store'
+import { Routing } from './Routes/Routing'
 import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 

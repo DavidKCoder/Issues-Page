@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Label.scss";
+import "./LabelList.scss";
 import { connect } from "react-redux";
-import LabelsType from "../LabelsType/LabelsType";
-import { addLabel } from "../../redux/labelsReducer/actions";
+import LabelsType from "../LabelItem/LabelItem";
+import { addLabel } from "../../../redux/labelsReducer/actions";
 import PropTypes from "prop-types";
 
 const Labels = ({ labels, addLabel }) => {

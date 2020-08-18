@@ -1,5 +1,5 @@
 import React from "react";
-import "./LabelsType.scss";
+import "./LabelType.scss";
 import PropTypes from "prop-types";
 
 const LabelsType = ({ label }) => {

@@ -1,12 +1,12 @@
 import React from "react";
-import "./issues.scss";
+import "../IssueStyle/issueStyle.scss";
 import { NavLink } from "react-router-dom";
-import LabelsType from "../LabelsType/LabelsType";
+import LabelsType from "../../Label/LabelItem/LabelItem";
 import PropTypes from "prop-types";
 
 const Issue = ({ issue }) => {
   return (
-    <NavLink to={"issue/" + issue.id} className="nav-link">
+    <NavLink to={`issue/${issue.id}`} className="nav-link">
       <div className="issue">
         <div className="header">
           <span className="isOpen">

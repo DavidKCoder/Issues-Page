@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getIssue } from "../../redux/issueReducer/thunk";
-import { addLabel } from "../../redux/issuesReducer/actions";
+import { getIssue } from "../../../redux/issueReducer/thunk";
+import { addLabel } from "../../../redux/issuesReducer/actions";
 import { connect } from "react-redux";
-import LabelsType from "../LabelsType/LabelsType";
+import LabelsType from "../../Label/LabelItem/LabelItem";
 import PropTypes from "prop-types";
 
 const Issue = ({ issue, getIssue, labels, addLabel }) => {
@@ -20,16 +20,14 @@ const Issue = ({ issue, getIssue, labels, addLabel }) => {
   }, [refreshPage]);
 
   const addNewLabel = (label) => {
-    const filteredItems = issue.badges.filter((item) => {
-      if (item.id === label.id) {
-        return item;
-      }
-    });
+    const filteredItems = issue.badges.filter((item) => item.id === label.id);
 
     if (!filteredItems.length) {
       addLabel(label, issue.id);
       setOpen(false);
-    } else alert("You choosed this label");
+    } else {
+      alert("You choosed this label");
+    }
   };
 
   return (
@@ -49,9 +47,9 @@ const Issue = ({ issue, getIssue, labels, addLabel }) => {
       <button onClick={() => setOpen(!open)} className="add-issue-btn">
         Add labels{" "}
         {open ? (
-          <i className="fa fa-angle-up"></i>
+          <i className="fa fa-angle-up" />
         ) : (
-          <i className="fa fa-angle-down"></i>
+          <i className="fa fa-angle-down" />
         )}
       </button>
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./issues.scss";
-import Issue from "./issue";
+import "../IssueStyle/issueStyle.scss";
+import Issue from "../IssueItem/issueItem";
 import { connect } from "react-redux";
-import { addIssue } from "../../redux/issuesReducer/actions";
-import Labels from "../Labels/Labels";
-import LabelsType from "../LabelsType/LabelsType";
+import { addIssue } from "../../../redux/issuesReducer/actions";
+import Labels from "../../Label/LabelList/LabelList";
+import LabelsType from "../../Label/LabelItem/LabelItem";
 import PropTypes from "prop-types";
 
 const Issues = ({ issues, addIssue, labels }) => {
